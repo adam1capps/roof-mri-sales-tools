@@ -323,6 +323,13 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 .rd-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gray-100);border:1px solid var(--gray-200);
   border-radius:999px;padding:7px 14px;font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;color:var(--navy)}
 .rd-badge svg{width:15px;height:15px;color:var(--green-dark)}
+/* Vent lineup — 10W / 20W / Powered */
+.vent-types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vent-type{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:20px 22px;box-shadow:var(--shadow-sm);border-top:3px solid var(--orange)}
+.vent-type .vt-w{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;color:var(--orange-dark);line-height:1}
+.vent-type h5{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin:4px 0 7px}
+.vent-type p{font-size:.9rem;color:var(--gray-600);line-height:1.55}
+@media(max-width:700px){.vent-types{grid-template-columns:1fr}}
 
 /* Spec cards grid */
 .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -379,34 +386,30 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 .us-map{width:100%;height:auto;display:block;overflow:visible}
 .us-map .state{fill:var(--gray-100);stroke:#fff;stroke-width:1;transition:fill .2s ease}
 .us-map .state.active{fill:#e4eff9}
-.us-map .mk{cursor:pointer}
-.us-map .mk .halo{opacity:.18;transform-box:fill-box;transform-origin:center}
-.us-map .mk .dot{stroke:#fff;stroke-width:1.6;transition:r .15s ease}
-.us-map .mk-installed .halo{fill:var(--green)}
-.us-map .mk-installed .dot{fill:var(--green)}
-.us-map .mk-bid .halo{fill:var(--orange)}
-.us-map .mk-bid .dot{fill:var(--orange)}
-.us-map .mk:hover .dot,.us-map .mk:focus .dot{r:7.5}
-.us-map .mk:focus{outline:none}
-.us-map .mk-installed .halo{animation:mkpulse 2.6s ease-out infinite}
-@keyframes mkpulse{0%{r:6;opacity:.35}70%{r:15;opacity:0}100%{opacity:0}}
+/* Small dots, high volume — the count is the story, not the dot size. */
+.us-map .dot{stroke:#fff;stroke-width:.5;fill-opacity:.88;cursor:pointer;transition:r .12s ease}
+.us-map .dot.mk-redry{fill:var(--orange)}
+.us-map .dot.mk-mri{fill:var(--green)}
+.us-map .dot.hot{stroke-width:1.4;r:5.2}
+.us-map .dot:focus{outline:none}
 .map-tip{position:absolute;transform:translate(-50%,-140%);background:var(--navy-dark);color:#fff;border-radius:8px;
   padding:7px 11px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;white-space:nowrap;pointer-events:none;
   opacity:0;transition:opacity .15s ease;box-shadow:var(--shadow-lg);z-index:3}
 .map-tip.on{opacity:1}
 .map-tip b{display:block;font-weight:700}
 .map-tip span{font-weight:600;font-size:10.5px}
-.map-tip .tip-installed{color:var(--green)}
-.map-tip .tip-bid{color:var(--orange)}
+.map-tip .tip-redry{color:var(--orange)}
+.map-tip .tip-mri{color:var(--green)}
 .map-fallback{padding:40px;text-align:center;color:var(--gray-600)}
 .map-counts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
 .map-counts .lg{display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;color:var(--gray-600);
   background:var(--gray-50);border:1px solid var(--gray-200);border-radius:999px;padding:7px 14px}
 .map-counts .lg b{font-weight:800;color:var(--navy)}
 .map-counts .lg::before{content:"";width:10px;height:10px;border-radius:50%}
-.map-counts .lg-installed::before{background:var(--green)}
-.map-counts .lg-bid::before{background:var(--orange)}
-.map-counts .lg-total::before{background:var(--navy)}
+.map-counts .lg-redry::before{background:var(--orange)}
+.map-counts .lg-mri::before{background:var(--green)}
+.map-counts .lg-total::before{background:var(--blue)}
+.map-counts .lg b{font-size:16px}
 .map-list{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .loc-group h4{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px}
 .loc-chips{display:flex;flex-wrap:wrap;gap:8px}
