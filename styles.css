@@ -51,9 +51,9 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);
   backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--gray-200)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo img{height:28px;width:auto}
-.nav-logo b{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:var(--navy)}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo img{height:15px;width:auto}
+.nav-logo b{font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;letter-spacing:.01em;line-height:1;color:var(--navy)}
 .nav-logo span{color:var(--green)}
 .nav-actions{display:flex;align-items:center;gap:14px}
 .nav-link{font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;color:var(--gray-600);text-decoration:none;transition:color .18s ease}
