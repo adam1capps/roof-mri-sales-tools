@@ -50,13 +50,30 @@ Claude Design.
 ## Files
 
 ```
-index.html         # Teaser / cold-call leave-behind (Output 1)
-case-study.html    # Standalone McCallum walkthrough (Output 2 = slide 28)
-styles.css         # Shared design system
-app.js             # Case-study interactions (tabs, chips, carousel)
-netlify.toml       # Static publish config + headers
-images/            # Logos + images/mccallum/* case-study assets
+index.html          # Teaser / cold-call leave-behind (Output 1)
+case-study.html     # Standalone McCallum walkthrough (Output 2 = slide 28)
+redry.html          # ReDry technical page (system, specs, install, lease) + US map
+styles.css          # Shared design system (McCallum green/navy + ReDry blue/orange)
+app.js              # Case-study interactions (tabs, chips, carousel)
+redry-map.js        # Renders the ReDry footprint map from baked projection data
+redry-map-data.json # Pre-projected (Albers-USA) states + city markers, built with d3-geo
+netlify.toml        # Static publish config + headers
+images/             # Logos + images/mccallum/* + images/redry/* assets
 ```
+
+## ReDry technical page (`redry.html`)
+
+A more technical companion to the McCallum pages, for contractors and
+facility owners. Covers the ReDry two-way solar vent (what it is, specs,
+how it dries wet insulation), the installation procedure (from the
+`SPEC-VENT-2026-01` install spec), the coating/warranty logic, value to
+each party, an interactive **national footprint map** (city + state only —
+no addresses; green = installed/drying, orange = bid/scanned), and the
+customer **leasing process**. Palette adds the site's **blue** as a third
+brand color alongside ReDry **orange** and Roof MRI **green**.
+
+The map is fully self-contained: `redry-map-data.json` is projected at build
+time with `d3-geo`'s Albers-USA, so no mapping library loads at runtime.
 
 ## Local preview
 
