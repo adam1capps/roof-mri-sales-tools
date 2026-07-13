@@ -1,9 +1,9 @@
 /* =========================================================================
    ReDry national footprint map. Renders a pre-projected (Albers-USA) US map
-   from redry-map-data.json — coordinates are baked at build time with d3-geo,
+   from redry-map-data.json, coordinates are baked at build time with d3-geo,
    so no mapping library is needed at runtime. City + state only; no addresses.
    Two marker types: redry (orange) and mri (green = Roof MRI reports).
-   Small dots, high volume — the count is the story.
+   Small dots, high volume, the count is the story.
    ========================================================================= */
 (function () {
   'use strict';
@@ -11,7 +11,7 @@
   if (!mount) return;
   const SVGNS = 'http://www.w3.org/2000/svg';
   const TYPES = {
-    redry: { label: 'ReDry — installed & bid', cls: 'redry' },
+    redry: { label: 'ReDry, installed & bid', cls: 'redry' },
     mri: { label: 'Roof MRI report', cls: 'mri' },
   };
 
@@ -19,7 +19,7 @@
     .then((r) => { if (!r.ok) throw new Error('map data ' + r.status); return r.json(); })
     .then(render)
     .catch((err) => {
-      mount.innerHTML = '<p class="map-fallback">Map unavailable — ReDry and Roof MRI are active across 30+ states.</p>';
+      mount.innerHTML = '<p class="map-fallback">Map unavailable, ReDry and Roof MRI are active across 30+ states.</p>';
       console.error(err);
     });
 
@@ -41,14 +41,14 @@
     }
     svg.appendChild(gStates);
 
-    // Markers — green painted under orange (data is ordered mri-then-redry).
+    // Markers, green painted under orange (data is ordered mri-then-redry).
     const gMarks = el('g', { class: 'marks' });
     for (const c of data.cities) {
       const t = TYPES[c.type] || TYPES.redry;
       const dot = el('circle', {
         class: 'dot mk-' + t.cls, cx: c.x, cy: c.y, r: 3.1,
         'data-label': c.label, 'data-type': t.label, tabindex: '0',
-        role: 'img', 'aria-label': c.label + ' — ' + t.label,
+        role: 'img', 'aria-label': c.label + ', ' + t.label,
       });
       gMarks.appendChild(dot);
     }
@@ -74,20 +74,21 @@
     gMarks.addEventListener('focusin', show);
     gMarks.addEventListener('focusout', hide);
 
-    // Counts — lead with volume.
-    const redry = data.cities.filter((c) => c.type === 'redry').length;
-    const mri = data.cities.filter((c) => c.type === 'mri').length;
-    const states = new Set(data.cities.map((c) => c.label.split(',').pop().trim())).size;
+    // Counts, lead with volume (true totals from data.counts when present).
+    const cc = data.counts || {};
+    const redry = cc.redry != null ? cc.redry : data.cities.filter((c) => c.type === 'redry').length;
+    const mriReports = cc.mriReports != null ? cc.mriReports : data.cities.filter((c) => c.type === 'mri').length;
+    const states = cc.states != null ? cc.states : new Set(data.cities.map((c) => c.label.split(',').pop().trim())).size;
     const counts = document.getElementById('reDryMapCounts');
     if (counts) {
       const item = (n, label, cls) => '<span class="lg lg-' + cls + '"><b>' + n + '</b>' + label + '</span>';
       counts.innerHTML =
-        (mri ? item(mri, 'Roof MRI reports', 'mri') : '') +
+        (mriReports ? item(mriReports, 'Roof MRI reports', 'mri') : '') +
         item(redry, 'ReDry sites', 'redry') +
         item(states, 'states', 'total');
     }
 
-    // Compact breadth line — the states, not a 700-item city list.
+    // Compact breadth line, the states, not a 700-item city list.
     const list = document.getElementById('reDryMapList');
     if (list) {
       const abbr = [...new Set(data.cities.map((c) => c.label.split(',').pop().trim()))].sort();
