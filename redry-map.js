@@ -32,8 +32,10 @@
   function render(data) {
     const svg = el('svg', {
       viewBox: '0 0 ' + data.width + ' ' + data.height, class: 'us-map', role: 'img',
-      'aria-label': 'Map of U.S. cities where ReDry and Roof MRI have worked',
+      'aria-label': 'Map of U.S. and Canada locations where ReDry and Roof MRI have worked',
     });
+
+    if (data.canada) svg.appendChild(el('path', { d: data.canada, class: 'canada-land' }));
 
     const gStates = el('g', { class: 'states' });
     for (const s of data.states) {
@@ -88,12 +90,6 @@
         item(states, 'states', 'total');
     }
 
-    // Compact breadth line, the states, not a 700-item city list.
-    const list = document.getElementById('reDryMapList');
-    if (list) {
-      const abbr = [...new Set(data.cities.map((c) => c.label.split(',').pop().trim()))].sort();
-      list.innerHTML = '<div class="loc-group"><h4>Active in ' + abbr.length + ' states</h4><div class="loc-chips">' +
-        abbr.map((s) => '<span class="loc-chip">' + s + '</span>').join('') + '</div></div>';
-    }
+    // Breadth message lives in the static conversion band under the map.
   }
 })();
