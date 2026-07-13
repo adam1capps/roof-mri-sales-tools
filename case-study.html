@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McCallum HS — The App in Action · Roof MRI + ReDry</title>
+<meta name="description" content="A real Roof MRI + ReDry project at McCallum High School, Austin ISD: campus scan, moisture report, 157-vent map, install photos, and the bid.">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo-icon.png" alt="Roof MRI">
+      <b>Roof<span>MRI</span></b>
+    </a>
+    <nav class="nav-actions">
+      <a class="nav-link hide-sm" href="index.html">What's the offer</a>
+      <a class="btn btn-primary btn-sm" href="https://calendly.com/adam-re-dry/google-meet-roof-mri-consultation" target="_blank" rel="noopener">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CASE STUDY -->
+<main class="case-page">
+  <div class="wrap">
+    <div class="case-head">
+      <span class="pillar-tag">Real-World Case Study</span>
+      <h1>McCallum HS — <span class="accent">The App in Action</span></h1>
+      <div class="mccallum-meta">
+        <span><strong>Austin ISD</strong></span><span class="dot">·</span>
+        <span>6 Buildings</span><span class="dot">·</span>
+        <span>Scanned Jan 2026</span><span class="dot">·</span>
+        <span><strong style="color:var(--green-dark)">157 Vents Placed</strong></span><span class="dot">·</span>
+        <span>Austin Degenhart &amp; LD Tebben</span>
+      </div>
+      <p class="case-hint">Click a tab or press <kbd>1</kbd>–<kbd>6</kbd> to walk the project end to end.</p>
+    </div>
+
+    <div class="comp-wrap">
+      <div class="comp-tabs" id="caseTabs" role="tablist" aria-label="McCallum project walkthrough">
+        <button class="comp-tab active" role="tab" aria-selected="true" data-case="campus"><span class="comp-tab-icon">◎</span>Campus<span class="comp-tab-key">1</span></button>
+        <button class="comp-tab" role="tab" aria-selected="false" data-case="blank"><span class="comp-tab-icon">▦</span>Blank Grids<span class="comp-tab-key">2</span></button>
+        <button class="comp-tab" role="tab" aria-selected="false" data-case="report"><span class="comp-tab-icon">◉</span>MRI Report<span class="comp-tab-key">3</span></button>
+        <button class="comp-tab" role="tab" aria-selected="false" data-case="vents"><span class="comp-tab-icon">▼</span>Vent Map<span class="comp-tab-key">4</span></button>
+        <button class="comp-tab" role="tab" aria-selected="false" data-case="installed"><span class="comp-tab-icon">✓</span>Installed<span class="comp-tab-key">5</span></button>
+        <button class="comp-tab" role="tab" aria-selected="false" data-case="bid"><span class="comp-tab-icon">$</span>The Bid<span class="comp-tab-key">6</span></button>
+      </div>
+
+      <div class="comp-view" id="caseView">
+        <!-- CAMPUS -->
+        <div class="comp-panel active" data-case-panel="campus" role="tabpanel">
+          <div class="case-hero"><img src="images/mccallum/campus-overview.jpg" alt="McCallum HS campus aerial overview"></div>
+          <div class="case-caption-strip">
+            <div><strong>McCallum High School</strong> · 5600 Sunshine Dr, Austin TX 78756</div>
+            <div class="case-stats">
+              <span><strong>6</strong>Buildings</span>
+              <span><strong>~260K</strong>sqft</span>
+              <span><strong>157</strong>Vents</span>
+              <span><strong>5/6</strong>Need ReDry</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLANK GRIDS -->
+        <div class="comp-panel" data-case-panel="blank" role="tabpanel">
+          <div class="bldg-chips" data-group="blank">
+            <button class="bldg-chip active" data-b="A">A</button>
+            <button class="bldg-chip" data-b="B">B</button>
+            <button class="bldg-chip" data-b="C">C</button>
+            <button class="bldg-chip" data-b="D">D</button>
+            <button class="bldg-chip" data-b="E">E</button>
+            <button class="bldg-chip" data-b="F">F</button>
+          </div>
+          <div class="bldg-canvas" data-group="blank">
+            <img class="bldg-img active" data-b="A" src="images/mccallum/blank-A.jpg" alt="Building A blank scan grid">
+            <img class="bldg-img" data-b="B" src="images/mccallum/blank-B.jpg" alt="Building B blank scan grid">
+            <img class="bldg-img" data-b="C" src="images/mccallum/blank-C.jpg" alt="Building C blank scan grid">
+            <img class="bldg-img" data-b="D" src="images/mccallum/blank-D.jpg" alt="Building D blank scan grid">
+            <img class="bldg-img" data-b="E" src="images/mccallum/blank-E.jpg" alt="Building E blank scan grid">
+            <img class="bldg-img" data-b="F" src="images/mccallum/blank-F.jpg" alt="Building F blank scan grid">
+          </div>
+          <div class="case-caption-strip">
+            <div><strong>Blank grids delivered through the app</strong> · Numbered sections printed and taken to the roof</div>
+          </div>
+        </div>
+
+        <!-- MRI REPORT (filled/scanned) -->
+        <div class="comp-panel" data-case-panel="report" role="tabpanel">
+          <div class="bldg-chips" data-group="report">
+            <button class="bldg-chip active" data-b="A">A</button>
+            <button class="bldg-chip" data-b="B">B</button>
+            <button class="bldg-chip" data-b="C">C</button>
+            <button class="bldg-chip muted" data-b="D" title="Scanned clean — no remediation needed">D</button>
+            <button class="bldg-chip" data-b="E">E</button>
+            <button class="bldg-chip" data-b="F">F</button>
+          </div>
+          <div class="bldg-canvas" data-group="report">
+            <img class="bldg-img active" data-b="A" src="images/mccallum/filled-A.jpg" alt="Building A moisture overlay">
+            <img class="bldg-img" data-b="B" src="images/mccallum/filled-B.jpg" alt="Building B moisture overlay">
+            <img class="bldg-img" data-b="C" src="images/mccallum/filled-C.jpg" alt="Building C moisture overlay">
+            <div class="bldg-clean" data-b="D">
+              <div class="clean-check">✓</div>
+              <h3>Building D — Scanned Clean</h3>
+              <p>No moisture above the PHD floor. <strong>No remediation needed.</strong><br>Real data drives real decisions — we don't sell work we can't justify.</p>
+            </div>
+            <img class="bldg-img" data-b="E" src="images/mccallum/filled-E.jpg" alt="Building E moisture overlay">
+            <img class="bldg-img" data-b="F" src="images/mccallum/filled-F.jpg" alt="Building F moisture overlay">
+          </div>
+          <div class="case-caption-strip">
+            <div>Emailed to <strong>Austin Degenhart</strong> · Moisture overlay on aerial imagery</div>
+            <div class="case-legend">
+              <span class="lg lg-green">Dry</span>
+              <span class="lg lg-yellow">Elevated</span>
+              <span class="lg lg-orange">Wet</span>
+              <span class="lg lg-red">Saturated</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VENT MAP -->
+        <div class="comp-panel" data-case-panel="vents" role="tabpanel">
+          <div class="bldg-chips" data-group="vents">
+            <button class="bldg-chip active" data-b="A">A<span class="chip-sub">8</span></button>
+            <button class="bldg-chip" data-b="B">B<span class="chip-sub">55</span></button>
+            <button class="bldg-chip" data-b="C">C<span class="chip-sub">37</span></button>
+            <button class="bldg-chip" data-b="E">E<span class="chip-sub">35</span></button>
+            <button class="bldg-chip" data-b="F">F<span class="chip-sub">22</span></button>
+          </div>
+          <div class="bldg-canvas" data-group="vents">
+            <img class="bldg-img active" data-b="A" src="images/mccallum/vent-A-8.jpg" alt="Building A vent placement">
+            <img class="bldg-img" data-b="B" src="images/mccallum/vent-B-55.jpg" alt="Building B vent placement">
+            <img class="bldg-img" data-b="C" src="images/mccallum/vent-C-37.jpg" alt="Building C vent placement">
+            <img class="bldg-img" data-b="E" src="images/mccallum/vent-E-35.jpg" alt="Building E vent placement">
+            <img class="bldg-img" data-b="F" src="images/mccallum/vent-F-22.jpg" alt="Building F vent placement">
+          </div>
+          <div class="case-caption-strip">
+            <div><strong>157 vents</strong> placed across 5 buildings · Generated in the ReDry Vent Placement app</div>
+            <a class="case-link-btn" href="https://redry-vent-placement.netlify.app/contractor/address/f6c9a4a1-4a2d-42f4-a4ff-206923f18e54" target="_blank" rel="noopener">Open the live map →</a>
+          </div>
+        </div>
+
+        <!-- INSTALLED -->
+        <div class="comp-panel" data-case-panel="installed" role="tabpanel">
+          <div class="install-carousel" id="installCarousel">
+            <figure class="install-slide active" data-i="0">
+              <img src="images/mccallum/installed/install-1-daytime.jpg" alt="Installed ReDry vents on McCallum roof, daytime">
+              <figcaption><span class="ic-n">1</span>Row of installed ReDry vents · sealed at the base</figcaption>
+            </figure>
+            <figure class="install-slide" data-i="1">
+              <img src="images/mccallum/installed/install-2-sunset-wide.jpg" alt="Installed vents at sunset, wide shot">
+              <figcaption><span class="ic-n">2</span>Sunset on the finished roof · vents catching the light</figcaption>
+            </figure>
+            <figure class="install-slide" data-i="2">
+              <img src="images/mccallum/installed/install-3-sunset-close.jpg" alt="Close-up of installed vent at sunset">
+              <figcaption><span class="ic-n">3</span>Close-up · the finished detail</figcaption>
+            </figure>
+            <button class="install-arrow install-prev" aria-label="Previous photo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="install-arrow install-next" aria-label="Next photo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="install-dots">
+              <button class="install-dot active" data-i="0" aria-label="Photo 1"></button>
+              <button class="install-dot" data-i="1" aria-label="Photo 2"></button>
+              <button class="install-dot" data-i="2" aria-label="Photo 3"></button>
+            </div>
+          </div>
+          <div class="case-caption-strip">
+            <div><strong>Proof on the roof</strong> · Post-install ReDry vents at McCallum HS</div>
+            <div style="font-size:11px;color:var(--gray-400)">Arrows, dots, or ← → keys</div>
+          </div>
+        </div>
+
+        <!-- BID -->
+        <div class="comp-panel" data-case-panel="bid" role="tabpanel">
+          <div class="bid-embed">
+            <iframe src="images/mccallum/bid-mccallum.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="McCallum HS — ReDry Quote + Contract" loading="lazy"></iframe>
+          </div>
+          <div class="case-caption-strip">
+            <div>Submitted to <strong>LD Tebben</strong> for Austin ISD · ReDry Quote + Contract</div>
+            <a class="case-link-btn" href="images/mccallum/bid-mccallum.pdf" target="_blank" rel="noopener">Open the full PDF →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEXT STEP: the proposal software (the close) -->
+    <section class="nextstep">
+      <span class="eyebrow">The natural next step</span>
+      <h2>This is the business you could be running.</h2>
+      <p class="lead">
+        McCallum started with one trained scanner and the Roof MRI method. Get your team certified,
+        and we'll build your proposal in the Roof MRI proposal software — configured, branded,
+        signed, and paid online. Here's the offer.
+      </p>
+
+      <div class="tier-grid">
+        <div class="tier">
+          <div class="t-name">Professional</div>
+          <div class="t-price">$10K</div>
+          <div class="t-sub">one-time</div>
+          <div class="t-desc">1 day · up to 3 trainees · 1 Recon Kit · classroom + field certification.</div>
+        </div>
+        <div class="tier feature">
+          <div class="t-name">Regional</div>
+          <div class="t-price">$35K</div>
+          <div class="t-sub">one-time</div>
+          <div class="t-desc">2 days · up to 10 trainees · 2 Recon Kits · 2 dedicated tracks · quarterly check-ins.</div>
+        </div>
+        <div class="tier">
+          <div class="t-name">Enterprise</div>
+          <div class="t-price">$75K+</div>
+          <div class="t-sub">custom engagement</div>
+          <div class="t-desc">4 days · up to 25 trainees · 4 Recon Kits · every track · full support.</div>
+        </div>
+      </div>
+
+      <div class="btns">
+        <a class="btn btn-primary btn-lg" href="https://proposals.roof-mri.com" target="_blank" rel="noopener">
+          Build my training proposal →
+        </a>
+        <a class="btn btn-on-dark btn-lg" href="https://calendly.com/adam-re-dry/google-meet-roof-mri-consultation" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book my intro call
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-logo">
+      <img src="images/logo-light.png" alt="Roof MRI" onerror="this.src='images/logo-icon.png'">
+      <b>Roof MRI + ReDry</b>
+    </div>
+    <small>McCallum HS · Austin ISD · Austin Degenhart &amp; LD Tebben · <a href="https://calendly.com/adam-re-dry/google-meet-roof-mri-consultation" target="_blank" rel="noopener">Book a call</a></small>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

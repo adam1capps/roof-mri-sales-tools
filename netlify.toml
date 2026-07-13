@@ -1,0 +1,21 @@
+# Static site — no build step. Publish the repo root as-is.
+[build]
+  publish = "."
+
+# Nice, extensionless URLs: /case-study -> case-study.html
+[[redirects]]
+  from = "/case-study"
+  to = "/case-study.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long-cache the immutable case-study assets (images + bid PDF)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
