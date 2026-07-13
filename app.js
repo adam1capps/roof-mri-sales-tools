@@ -1,5 +1,5 @@
 /* =========================================================================
-   McCallum HS case study — tabs + building chips + install carousel.
+   McCallum HS case study, tabs + building chips + install carousel.
    Standalone port of the deck slide-28 interactions (no deck runtime).
    ========================================================================= */
 (function () {
