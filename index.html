@@ -23,7 +23,7 @@
     </a>
     <nav class="nav-actions">
       <a class="nav-link hide-sm" href="case-study.html">The McCallum project</a>
-      <a class="nav-link hide-sm" href="redry.html">The ReDry system</a>
+      <a class="nav-switch to-redry" href="redry.html">ReDry <span class="sw-arrow" aria-hidden="true">&rarr;</span></a>
       <a class="btn btn-primary btn-sm" href="https://calendly.com/adam-re-dry/google-meet-roof-mri-consultation" target="_blank" rel="noopener">Book a call</a>
     </nav>
   </div>
@@ -119,13 +119,13 @@
         <img class="sr-gray" src="images/mccallum/filled-A.jpg" alt="Aerial view of a McCallum school building roof before scanning" loading="lazy">
         <img class="sr-color" src="images/mccallum/filled-A.jpg" alt="The same roof with the Roof MRI moisture heatmap revealed, green dry areas and yellow wet zones" loading="lazy" aria-hidden="true">
         <span class="sr-scanline" aria-hidden="true"></span>
-        <figcaption><span class="sr-label">Roof A</span><span class="sr-hint"><span class="sr-dot"></span>Hover to scan</span></figcaption>
+        <figcaption><span class="sr-label">Roof A</span><span class="sr-hint"><span class="sr-dot"></span><span class="hint-hover">Hover to scan</span><span class="hint-tap">Tap to scan</span></span></figcaption>
       </figure>
       <figure class="scan-reveal" tabindex="0" aria-label="Roof B. Hover or tap to reveal the moisture scan.">
         <img class="sr-gray" src="images/mccallum/filled-B.jpg" alt="Aerial view of a second McCallum school building roof before scanning" loading="lazy">
         <img class="sr-color" src="images/mccallum/filled-B.jpg" alt="The same roof with the Roof MRI moisture heatmap revealed, green dry areas and yellow wet zones" loading="lazy" aria-hidden="true">
         <span class="sr-scanline" aria-hidden="true"></span>
-        <figcaption><span class="sr-label">Roof B</span><span class="sr-hint"><span class="sr-dot"></span>Hover to scan</span></figcaption>
+        <figcaption><span class="sr-label">Roof B</span><span class="sr-hint"><span class="sr-dot"></span><span class="hint-hover">Hover to scan</span><span class="hint-tap">Tap to scan</span></span></figcaption>
       </figure>
     </div>
 
@@ -176,5 +176,15 @@
   </div>
 </footer>
 
+<script>
+// Tap-to-reveal the moisture scan on touch (no hover on phones); hover still works on desktop.
+(function(){
+  var tiles=document.querySelectorAll('.scan-reveal');
+  tiles.forEach(function(el){
+    el.addEventListener('click',function(){el.classList.toggle('revealed');});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('revealed');}});
+  });
+})();
+</script>
 </body>
 </html>
