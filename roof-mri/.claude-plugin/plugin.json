@@ -1,0 +1,14 @@
+{
+  "name": "roof-mri-toolkit",
+  "displayName": "Roof MRI Toolkit",
+  "version": "0.1.0",
+  "description": "Full workflow toolkit for the Roof MRI + ReDry product family: brand design system, page/email scaffolding, Neon/Postgres schema, Netlify deploy checks, and training-platform helpers.",
+  "author": {
+    "name": "ReDry / Roof MRI",
+    "email": "adam@re-dry.com"
+  },
+  "homepage": "https://github.com/adam1capps/roof-mri-sales-tools",
+  "repository": "https://github.com/adam1capps/roof-mri-sales-tools",
+  "license": "UNLICENSED",
+  "keywords": ["roof-mri", "redry", "design-system", "netlify", "sendgrid", "neon", "postgres"]
+}
