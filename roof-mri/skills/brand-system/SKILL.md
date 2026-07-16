@@ -1,6 +1,6 @@
 ---
 name: brand-system
-description: The Roof MRI + ReDry brand design system and product vocabulary — the single source of truth for colors, type, UX principles, voice, and shared links. Use whenever building or editing any Roof MRI / ReDry frontend — static sales pages, the proposal software UI, the training deck/overlay, branded emails, or any page, component, or copy that a prospect, contractor, trainer, or attendee will see. Apply it before choosing colors, fonts, layout, or wording so everything stays on-brand and consistent across the three repos.
+description: The Roof MRI + ReDry brand design system and product vocabulary — the single source of truth for colors, type, UX principles, voice, and shared links. Use whenever building or editing any Roof MRI / ReDry frontend — static sales pages, the proposal software UI, the training deck/overlay, branded emails, or any page, component, or copy that a prospect, contractor, trainer, or attendee will see. Apply it before choosing colors, fonts, layout, or wording so everything stays on-brand and consistent across the three repos. Composes with the general /capps-apps-design skill — apply that for design judgement (how to design), and this for the product-specific tokens and vocabulary (what to use).
 ---
 
 # Roof MRI + ReDry brand system
@@ -10,6 +10,25 @@ and ReDry surface. Colors, type, and product vocabulary are carried over verbati
 across `roof-mri-sales-tools`, `roof-mri-backend` (proposal software), and
 `roof-mri-training-presentation-pro` (training platform). **Do not reinvent
 them** — reuse the tokens below.
+
+## Relationship to `/capps-apps-design`
+
+This skill is the **product layer**, not a general design method — the two are
+meant to be applied together:
+
+- **`/capps-apps-design`** (the capps-apps design skill / judgement) governs
+  *how* to design: layout, hierarchy, interaction, and the core rule that
+  concrete colors and product vocabulary come from the product / Claude Design,
+  **not** invented in the build. Apply it first whenever it's loaded in the
+  session; treat it as the authority on design method.
+- **`brand-system`** (this skill) is the concrete Roof MRI / ReDry realization
+  that `/capps-apps-design` tells you to defer to: the exact palette tokens,
+  type, product vocabulary, links, and technical constraints below.
+
+The UX principles in this file are the capps-apps design judgement *as applied
+to these products*, restated here so the plugin is useful even when
+`/capps-apps-design` isn't installed. When it is installed, it is the authority
+on those principles and this skill supplies the product-specific values.
 
 ## Color tokens
 

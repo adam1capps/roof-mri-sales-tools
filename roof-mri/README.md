@@ -32,7 +32,12 @@ Restart or `/plugin` to confirm it's enabled.
 
 - **`brand-system`** — the design-system source of truth (palette tokens, type,
   UX principles, product vocabulary, shared links, technical constraints).
-  Auto-loads whenever you build or edit a Roof MRI / ReDry surface.
+  Auto-loads whenever you build or edit a Roof MRI / ReDry surface. It is the
+  **product layer** and composes with the general `/capps-apps-design` skill:
+  apply `/capps-apps-design` for design *judgement* (how to design), and
+  `brand-system` for the product-specific *values* (what to use). It works
+  standalone too — the capps-apps principles are restated inside it for when
+  that skill isn't installed alongside the plugin.
 
 ### Commands
 
