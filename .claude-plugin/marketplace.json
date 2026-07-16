@@ -1,0 +1,16 @@
+{
+  "name": "roof-mri",
+  "owner": {
+    "name": "ReDry / Roof MRI",
+    "email": "adam@re-dry.com"
+  },
+  "description": "Claude Code plugins for the Roof MRI + ReDry product family: brand design system, on-brand page and email scaffolding, Neon/Postgres schema, Netlify deploy checks, and training-platform helpers.",
+  "plugins": [
+    {
+      "name": "roof-mri-toolkit",
+      "source": "./roof-mri",
+      "description": "Full workflow toolkit: brand design-system skill, on-brand page + email scaffolders, Neon schema and Netlify deploy helpers, the add-trainer flow, and an on-brand design-review subagent.",
+      "keywords": ["roof-mri", "redry", "design-system", "netlify", "sendgrid", "neon", "postgres"]
+    }
+  ]
+}
