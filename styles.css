@@ -95,7 +95,7 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(700px 340px at 12% 110%,rgba(2,132,199,.18),transparent 60%)}
 .hero .wrap{position:relative;z-index:1;padding-top:76px;padding-bottom:84px}
-.hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.5rem);font-weight:800;max-width:16ch}
+.hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.5rem);font-weight:800;max-width:24ch;text-wrap:balance}
 .hero .eyebrow{color:var(--green)}
 .hero-sub{margin-top:22px;max-width:60ch;font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.6;color:rgba(255,255,255,.82)}
 .hero-sub strong{color:#fff;font-weight:600}
