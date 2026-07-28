@@ -95,16 +95,35 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(700px 340px at 12% 110%,rgba(2,132,199,.18),transparent 60%)}
 .hero .wrap{position:relative;z-index:1;padding-top:76px;padding-bottom:84px}
-.hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.5rem);font-weight:800;max-width:16ch}
+/* All-caps display headline, same treatment as the ReDry hero so the two
+   front doors read as siblings. The grid column sets the measure, not max-width. */
+.hero h1{color:#fff;font-size:clamp(1.9rem,3.2vw,2.85rem);font-weight:800;
+  text-transform:uppercase;line-height:1.08;letter-spacing:-.2px;text-wrap:balance}
 .hero .eyebrow{color:var(--green)}
 .hero-sub{margin-top:22px;max-width:60ch;font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.6;color:rgba(255,255,255,.82)}
 .hero-sub strong{color:#fff;font-weight:600}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
-.hero-note svg{width:15px;height:15px;color:var(--green)}
+.hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:8px}
+.hero-note svg{width:15px;height:15px;margin-top:2px;flex:0 0 auto;color:var(--green)}
+/* Keeps "in-house" whole; the hyphen is a break opportunity and splits it. */
+.hero h1 .nb{white-space:nowrap}
+/* Hero split, copy left, a real moisture map right. Mirrors .rd-hero-grid;
+   without it the copy is a lone block of text against an empty half-screen. */
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:center}
+.hero-copy{min-width:0}
+.hero-art{margin:0;position:relative;min-width:0}
+.hero-art img{width:100%;height:auto;display:block;border-radius:var(--radius-xl);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 64px rgba(0,0,0,.55)}
+.hero-art figcaption{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;
+  padding:7px 13px;border-radius:999px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:#fff;
+  background:rgba(21,31,61,.72);border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hero-art .ha-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 3px rgba(0,189,112,.25)}
 /* stat strip */
 .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:52px;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);overflow:hidden}
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);overflow:hidden;
+  -webkit-backdrop-filter:blur(7px) saturate(1.12);backdrop-filter:blur(7px) saturate(1.12)}
 .stat{background:rgba(21,31,61,.35);padding:22px 20px;text-align:center}
 .stat b{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;line-height:1}
 .stat span{display:block;margin-top:7px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6)}
@@ -309,6 +328,7 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
   .nav-link.hide-sm{display:none}
   .section{padding:56px 0}
   .hero .wrap{padding-top:52px;padding-bottom:60px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
 }
 @media(max-width:560px){
   .stat-strip{grid-template-columns:1fr 1fr}

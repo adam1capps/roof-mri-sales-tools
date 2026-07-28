@@ -42,8 +42,10 @@ Google Fonts, matching the deck.
 
 ### `index.html`, teaser
 1. Sticky nav (logo · See the case study · **Book a call**)
-2. Navy hero, headline, three-party one-liner, primary CTA, stat strip
-   (6 buildings · 157 vents · 5/6 needed ReDry · 1 clean)
+2. Navy hero, headline, contractor benefit one-liner (get trained on
+   in-house moisture detection: win more bids, reduce change orders,
+   impress clients), primary CTA, stat strip (6 buildings · 157 vents ·
+   5/6 needed ReDry · 1 clean)
 3. "What's the offer", three cards: **District / Contractor / GACO**
 4. Lifecycle flow, Scan → Map → Dry → Verify → Warranty
 5. Navy CTA band, book the call (primary) or view case study (secondary)

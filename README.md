@@ -4,11 +4,33 @@ Cold-call and first-meeting sales pages for Roof MRI + ReDry. Two cohesive,
 standalone pages that share one design system and move a prospect from a cold
 call to a booked meeting to the proposal software.
 
+## Domains
+
+One Netlify site (`roof-mri-sales-tools`), two front doors. Both custom
+domains are assigned to the same site and serve the same files; only the
+root document differs.
+
+| Domain | Root serves | Also on this domain |
+|---|---|---|
+| **discover.roof-mri.com** | `index.html`, the Roof MRI teaser | `/case-study` |
+| **discover.re-dry.com** | `redry.html`, the ReDry system page | — |
+
+The ReDry root is a domain-level rewrite in `netlify.toml` (status 200 with
+`force = true`, which is what beats the site's own `index.html` at `/`). The
+Roof MRI root needs no rule, it is just the site root.
+
+Links follow one rule: **relative within a brand, absolute across brands.**
+`index.html` ↔ `case-study.html` stay relative so local preview works;
+anything crossing between Roof MRI and ReDry is a full `https://` URL, since
+crossing domains is the whole point. Each page carries a `rel="canonical"`
+naming its home domain, so the copy reachable on the other domain does not
+compete with it in search.
+
 ## The funnel
 
 | Stage | Page | Primary action |
 |---|---|---|
-| **Cold call**, Jimmy leaves a "what's the offer" link | `index.html` | **Book a 15-minute call** (Calendly) |
+| **Cold call**, Jimmy leaves a "what's the offer" link | `index.html` (discover.roof-mri.com) | **Book a 15-minute call** (Calendly) |
 | **First meeting**, Adam walks one real project | `case-study.html` | **Build my training proposal** → proposal software |
 
 Both pages point to the same Calendly link and to each other, so the story
@@ -83,9 +105,14 @@ npx serve .        # or: python3 -m http.server
 
 ## Deploy
 
-Static site, no build step. Hosted on Netlify (ReDry team). Publish
-directory is the repo root. Pushing this branch and connecting the repo in
-Netlify (or `netlify deploy --prod`) publishes it.
+Static site, no build step. Hosted on Netlify (ReDry team), project
+`roof-mri-sales-tools`. Publish directory is the repo root. Pushing this
+branch and connecting the repo in Netlify (or `netlify deploy --prod`)
+publishes it.
+
+Both `discover.roof-mri.com` and `discover.re-dry.com` are assigned to that
+one project, so a single deploy updates both. The split between them lives
+in `netlify.toml`, not in Netlify's dashboard settings, see **Domains** above.
 
 ## Key links
 
