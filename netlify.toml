@@ -2,6 +2,25 @@
 [build]
   publish = "."
 
+# One site, two front doors:
+#   discover.roof-mri.com  -> index.html   (Roof MRI, the site root, no rule needed)
+#   discover.re-dry.com    -> redry.html   (ReDry, rewritten below)
+#
+# `force = true` is required: without it the site's own index.html shadows "/"
+# and wins. Status 200 rewrites in place, so the URL bar stays on the bare
+# domain. http and https need separate rules per Netlify's domain-level syntax.
+[[redirects]]
+  from = "https://discover.re-dry.com/"
+  to = "/redry.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "http://discover.re-dry.com/"
+  to = "/redry.html"
+  status = 200
+  force = true
+
 # Nice, extensionless URLs: /case-study -> case-study.html
 [[redirects]]
   from = "/case-study"
