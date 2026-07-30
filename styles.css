@@ -98,18 +98,16 @@ h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);
 /* All-caps display headline, same treatment as the ReDry hero so the two
    front doors read as siblings. The grid column sets the measure, not max-width. */
 .hero h1{color:#fff;font-size:clamp(1.9rem,3.2vw,2.85rem);font-weight:800;
-  text-transform:uppercase;line-height:1.08;letter-spacing:-.2px;text-wrap:balance}
+  text-transform:uppercase;line-height:1.08;letter-spacing:-.2px;text-wrap:pretty}
 .hero .eyebrow{color:var(--green)}
 .hero-sub{margin-top:22px;max-width:60ch;font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.6;color:rgba(255,255,255,.82)}
 .hero-sub strong{color:#fff;font-weight:600}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 .hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:8px}
 .hero-note svg{width:15px;height:15px;margin-top:2px;flex:0 0 auto;color:var(--green)}
-/* Keeps "in-house" whole; the hyphen is a break opportunity and splits it. */
-.hero h1 .nb{white-space:nowrap}
 /* Hero split, copy left, a real moisture map right. Mirrors .rd-hero-grid;
    without it the copy is a lone block of text against an empty half-screen. */
-.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:46px;align-items:center}
 .hero-copy{min-width:0}
 .hero-art{margin:0;position:relative;min-width:0}
 .hero-art img{width:100%;height:auto;display:block;border-radius:var(--radius-xl);
